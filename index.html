@@ -105,7 +105,7 @@
                             <div class="box_half">
                                 <div class="box_content">
                                     <div class="box_input_line">
-                                        <label for="title"  class="w3-tag w3-round w3-green w3-border w3-border-white">SERVER ROUTE</label>
+                                        <label for="title"  class="w3-tag w3-round w3-green w3-border w3-border-white">SERVER ROUTE</label> <label  class="w3-tag w3-round w3-black w3-border w3-border-white" id="getApi">get api</label>
                                         <input type="text" class="w3-input" id="title" name="title" >
                                     </div>
                                     <div class="box_input_line">
@@ -118,7 +118,13 @@
                                 <div class="box_content">
                                     <div class="box_list">
                                         <div class="box_list_in">
-                                                <div id="apiList"></div>
+                                                <div id="apiList">
+                                                        <ul class="w3-ul">
+                                                                <li>Jill</li>
+                                                                <li>Eve</li>
+                                                                <li>Adam</li>
+                                                        </ul>
+                                                </div>
                                         </div>
                                     </div>
                                 </div>
@@ -132,10 +138,12 @@
     </div>
 
 
-
-
     <script>
-        
+        var info = document.querySelector("#infomation") 
+        document.querySelector("#getApi").addEventListener("click",function(){
+            var title = document.querySelector("#title").value
+            alert("getApi" + title)
+        })
         document.querySelector("#defaultJson").addEventListener("click",function(){
             alert("클릭")
         })
@@ -151,13 +159,18 @@
         })
         
         function init(){
-            alert("init")
-            var x = sendAjax("","/getlist")
-            console.log(x)
-        }
+         let xhr = new XMLHttpRequest();
+           xhr.open("GET","/getlist");
+           xhr.setRequestHeader("Content-Type", "application/json")
+           xhr.send();
 
+           xhr.onload = function () {
+            var data =JSON.parse(xhr.response);  
+                    info.innerHTML = "현재 사용중인 api2의 수는 " + data.count +" 개 입니다."
+            };     
+        }
+    
         function sendAjax(data,url){
-         
             let xhr = new XMLHttpRequest();
             xhr.open("POST",url);
             xhr.setRequestHeader("Content-Type", "application/json")
@@ -166,10 +179,11 @@
                 //console.log(xhr.responseText)
             })
             xhr.onreadystatechange = function(){
-            
-               
+                if (xhr.readyState === xhr.DONE && this.status === 200) {
+                    info.innerHTML = "등록 성공 "
+                }
             }
-
+            
             return xhr;
         }
         init();
