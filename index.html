@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+            body,h1 {font-family: "Raleway", sans-serif}
+            body, html {height: 100%}
+            * {
+                box-sizing: border-box;
+            }
+            .bgimg {
+              background-image: url('/bg');
+              min-height: 100%;
+              background-position: center;
+              background-size: cover;
+              position: relative;
+            }
+            .form {
+                width:100%;
+            }
+            content{
+                display: block;
+                width:100%;
+                overflow: hidden;
+            }
+        .container{
+            width:100%;
+            max-width:1000px;
+            margin:0 auto;
+        }
+        .row{
+            margin-left: -15px;
+            margin-right:-15px;
+        }
+        .box_half{
+            width:50%;
+            float: left;
+            overflow: hidden;
+            padding:15px;
+        }
+        .box_content{
+            width:100%;
+            border:1px solid #e1e1e1;
+            padding:30px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            box-shadow: 1px 2px 3px rgba(0,0,0,.1);
+        }
+        .input{
+            width:100%;
+            height:40px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            border:1px solid #e1e1e1;
+        }
+        .box_textarea{
+            width:100%;
+            min-height:300px;
+            border:1px solid #e1e1e1;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+        .box_input_line{
+            padding:10px;
+        }
+        .box_list{
+
+            width:100%;
+            padding:10px;
+        }
+        .box_list_in{
+            border:1px solid #e1e1e1;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            background-color: #fff;
+            height:410px;
+        }
+            </style>
+</head>
+<body class="w3-light-grey">
+<div class="bgimg">
+
+    <header class="w3-container w3-center w3-padding-30 w3-white">
+        <h1 class="w3-xxxlarge"><b>MOCK JSON API SERVER</b></h1>
+        <input type="button" class="w3-button w3-black" value="MAKE MOCK API" id="btn_send">
+        <div><p class="w3-tag w3-blue" id="infomation">11</p></div>
+        
+      </header>
+      <content>
+           <div class="form">
+                <form name="" action="" method="">
+                    <div class="container">
+                        <div class="row">
+                            <div class="box_half">
+                                <div class="box_content">
+                                    <div class="box_input_line">
+                                        <label for="title"  class="w3-tag w3-round w3-green w3-border w3-border-white">SERVER ROUTE</label>
+                                        <input type="text" class="w3-input" id="title" name="title" >
+                                    </div>
+                                    <div class="box_input_line">
+                                        <label for="json"  class="w3-tag w3-round w3-green w3-border w3-border-white" id="defaultJson">JSON</label>
+                                        <textarea name="json" id="json"  class="box_textarea" placeholder="json text" ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box_half">
+                                <div class="box_content">
+                                    <div class="box_list">
+                                        <div class="box_list_in">
+                                                <div id="apiList"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+           </div>
+      </content>
+    
+    </div>
+
+
+
+
+    <script>
+        
+        document.querySelector("#defaultJson").addEventListener("click",function(){
+            alert("클릭")
+        })
+        document.querySelector("#btn_send").addEventListener("click",function(){
+            const title = document.querySelector("#title")
+            const json = document.querySelector("#json")
+            let obj = {"title":title.value,
+                        "json":json.value}
+                    
+            data = JSON.stringify(obj)
+            sendAjax(data,"/upload");
+           
+        })
+        
+        function init(){
+            alert("init")
+            var x = sendAjax("","/getlist")
+            console.log(x)
+        }
+
+        function sendAjax(data,url){
+         
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST",url);
+            xhr.setRequestHeader("Content-Type", "application/json")
+            if(data!="")xhr.send(data)
+            xhr.addEventListener("load",function(){
+                //console.log(xhr.responseText)
+            })
+            xhr.onreadystatechange = function(){
+            
+               
+            }
+
+            return xhr;
+        }
+        init();
+    </script>
+</body>
+</html>
