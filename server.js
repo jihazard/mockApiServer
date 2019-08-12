@@ -40,10 +40,15 @@ server.get('/bg',function(req,res){
   res.sendfile(path.join(__dirname,"/public/image/bg.jpg"))
 })
 
-server.post('/getlist',function(req,res){
+server.get('/getlist',function(req,res){
     getList( function (err, content) {
-      console.log("/getList임 " + content)
-     res.json(content)
+
+      var data = {
+        count: Object.keys(content).length,
+        data : content
+      }
+
+     res.json(data)
    })
 })
 
