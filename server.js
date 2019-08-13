@@ -16,9 +16,10 @@ deleteJsonFile()
 
  fs.readdir(jsonSaveFolder, function (error, filelist) {
   //console.log("error  == > " + error);
-    filelist.forEach(function(element) {
-      server.use("/" + element.replace(".json", ""), jsonServer.router('./db/' + element));
-    })
+  for(var i in filelist)  server.use("/" + filelist[i].replace(".json", ""), jsonServer.router('./db/' + filelist[i]));
+
+ 
+
 })
 
 
