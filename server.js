@@ -85,10 +85,11 @@ function createJsonFile(data){
   })
 }
 
+
 //파일삭제
 function deleteJsonFile(){
-  const file = fs.statSync('db3.json')
-  console.log(file.birthtime)
+  // const file = fs.statSync('db3.json')
+  // console.log(file.birthtime)
  
 }
 
