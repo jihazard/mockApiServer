@@ -6,9 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <style>
             body,h1 {font-family: "Raleway", sans-serif}
             body, html {height: 100%}
@@ -94,7 +92,7 @@
     <header class="w3-container w3-center w3-padding-30 w3-white">
         <h1 class="w3-xxxlarge"><b>MOCK JSON API SERVER</b></h1>
         <input type="button" class="w3-button w3-black" value="MAKE MOCK API" id="btn_send">
-        <div><p class="w3-tag w3-blue" id="infomation">11</p></div>
+        <div><p class="w3-tag w3-blue" id="infomation"></p></div>
         
       </header>
       <content>
@@ -105,7 +103,7 @@
                             <div class="box_half">
                                 <div class="box_content">
                                     <div class="box_input_line">
-                                        <label for="title"  class="w3-tag w3-round w3-green w3-border w3-border-white">SERVER ROUTE</label> <label  class="w3-tag w3-round w3-black w3-border w3-border-white" id="getApi">get api</label>
+                                        <label for="title"  class="w3-tag w3-round w3-green w3-border w3-border-white">SERVER ROUTE</label> 
                                         <input type="text" class="w3-input" id="title" name="title" >
                                     </div>
                                     <div class="box_input_line">
@@ -138,55 +136,6 @@
     </div>
 
 
-    <script>
-        var info = document.querySelector("#infomation") 
-        document.querySelector("#getApi").addEventListener("click",function(){
-            var title = document.querySelector("#title").value
-            alert("getApi" + title)
-        })
-        document.querySelector("#defaultJson").addEventListener("click",function(){
-            alert("클릭")
-        })
-        document.querySelector("#btn_send").addEventListener("click",function(){
-            const title = document.querySelector("#title")
-            const json = document.querySelector("#json")
-            let obj = {"title":title.value,
-                        "json":json.value}
-                    
-            data = JSON.stringify(obj)
-            sendAjax(data,"/upload");
-           
-        })
-        
-        function init(){
-         let xhr = new XMLHttpRequest();
-           xhr.open("GET","/getlist");
-           xhr.setRequestHeader("Content-Type", "application/json")
-           xhr.send();
-
-           xhr.onload = function () {
-            var data =JSON.parse(xhr.response);  
-                    info.innerHTML = "현재 사용중인 api2의 수는 " + data.count +" 개 입니다."
-            };     
-        }
-    
-        function sendAjax(data,url){
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST",url);
-            xhr.setRequestHeader("Content-Type", "application/json")
-            if(data!="")xhr.send(data)
-            xhr.addEventListener("load",function(){
-                //console.log(xhr.responseText)
-            })
-            xhr.onreadystatechange = function(){
-                if (xhr.readyState === xhr.DONE && this.status === 200) {
-                    info.innerHTML = "등록 성공 "
-                }
-            }
-            
-            return xhr;
-        }
-        init();
-    </script>
+    <script src="/app"></script>
 </body>
 </html>
