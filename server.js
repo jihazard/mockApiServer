@@ -40,23 +40,24 @@ server.get('/bg',function(req,res){
   res.sendfile(path.join(__dirname,"/public/image/bg.jpg"))
 })
 
-server.get('/getlist',function(req,res){
-    getList( function (err, content) {
+server.get('/app',function(req,res){
+  res.sendfile(path.join(__dirname,"/public/js/app.js"))
+})
 
+
+server.get('/getlist',function(req,res){
+      getList( function (err, content) {
       var data = {
         count: Object.keys(content).length,
         data : content
       }
-
      res.json(data)
    })
 })
 
 
-server.post('/upload',function(req,res){
-  console.log(req.body.title)
-  //res.render(`email.ejs`,{'email' : req.body.email})
 
+server.post('/upload',function(req,res){
   try {
     JSON.parse(req.body.json)
     createJsonFile(req);
@@ -77,8 +78,7 @@ server.listen(3000, function r(request,response) {
 
 //파일생성
 function createJsonFile(data){
-  
-  var file = __dirname + "/db/" + data.body.title+".json";
+    var file = __dirname + "/db/" + data.body.title+".json";
   fs.writeFile(file ,data.body.json,(err)=>{
     if (err) throw err;
     console.log("save 완료")
@@ -87,7 +87,6 @@ function createJsonFile(data){
 
 //파일삭제
 function deleteJsonFile(){
-  console.log("--------------------")
   const file = fs.statSync('db3.json')
   console.log(file.birthtime)
  
@@ -99,3 +98,5 @@ function getList(callback) {
   })
   
 }
+
+
