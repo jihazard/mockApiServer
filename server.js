@@ -34,9 +34,7 @@ server.get('/call/:router',function(req,res){
 
   getData(filename ,function(result){
     if(result != undefined) {
-      let data = fs.readFileSync(jsonSaveFolder+ "/" + filename );
-      let jsondata = JSON.parse(data);
-      res.send(jsondata)
+      res.send(JSON.parse(fs.readFileSync(jsonSaveFolder+ "/" + filename )))
     } else {
       res.status(400).send("plz check url")
     }
