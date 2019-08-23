@@ -1,0 +1,123 @@
+{
+
+  "data": [
+   {
+      "title": "Background Limitations Android Oreo",
+      "pubDate": "2019-02-09 11:22:31",
+      "link": "https://androidwave.com/background-limitations-android-oreo/",
+      "author": "admin",
+      "thumbnail": "https://androidwave.com/wp-content/uploads/2019/02/background-limitations-android-oreo-370x247.png",
+      "description": "If you are looking at what exactly limitations are applied in background service in Android in Oreo. You are in right place."
+    },
+   {
+      "title": "ViewModel Android Example",
+      "pubDate": "2019-02-09 11:22:31",
+      "link": "https://androidwave.com/viewmodel-android-example/",
+      "author": "admin",
+      "thumbnail": "https://androidwave.com/wp-content/uploads/2019/02/viewmodel-android-example-370x247.png",
+      "description": "When you are developing professional-level android application, one of the most common things we need the consider is configuration changes."
+    },
+   {
+      "title": "Working with JobIntentService",
+      "pubDate": "2019-02-09 11:22:31",
+      "link": "https://androidwave.com/working-with-jobintentservice/",
+      "author": "admin",
+      "thumbnail": "https://androidwave.com/wp-content/uploads/2019/02/working-with-job-intent-service-370x247.png",
+      "description": "In our previous article, I have explained the limitation of using the IntentService in Android Oreo devices. To overcome this problem android introduced JobIntentService"
+    },  
+   {
+      "title": "Android Architecture Components",
+      "pubDate": "2019-02-09 11:22:31",
+      "link": "https://androidwave.com/android-architecture-components/",
+      "author": "admin",
+      "thumbnail": "https://androidwave.com/wp-content/uploads/2019/02/android-architecture-components-370x247.jpg",
+      "description": "We have divided Jetpack component into four major categories as Foundation, Architecture, Behaviour and UI"
+    },    
+{
+      "title": "Dagger2 Android Example",
+      "pubDate": "2019-02-09 11:22:31",
+      "link": "https://androidwave.com/dagger2-android-example/",
+      "author": "admin",
+      "thumbnail": "https://androidwave.com/wp-content/uploads/2019/02/dagger2-android-example-370x247.png",
+      "description": "Overview The following article, We are explaining comprehend used of Dependency Injection."
+    },
+    {
+      "title": "Android MVP Architecture for Beginners (Demo App)",
+      "pubDate": "2019-02-03 18:57:39",
+      "link": "https://androidwave.com/android-mvp-architecture-for-beginners-demo-app/",
+      "guid": "https://androidwave.com/?p=1605",
+      "author": "admin",
+      "thumbnail": "https://androidwave.com/wp-content/uploads/2019/02/android-mvp-architecture-for-beginner-370x247.png",
+      "description": "What is MVP ..? MVP (Model View Presenter) design pattern is derived from MVC pattern most of the things is same, where is the controller is replaced by presenter"},
+    {
+      "title": "RxJava, RxAndroid Tutorials",
+      "pubDate": "2019-02-03 18:08:08",
+      "link": "https://androidwave.com/rxjava-rxandroid-tutorials/",
+      "guid": "https://androidwave.com/?p=499",
+      "author": "admin",
+      "thumbnail": "https://androidwave.com/wp-content/uploads/2019/02/rxjava-rxandroid-tutorials-370x247.png",
+      "description": "What is reactive programming ? The RxJava is a very interesting and new topic in Android development."
+    },
+    {
+      "title": "Working with Room Persistence Library",
+      "pubDate": "2019-02-02 19:20:10",
+      "link": "https://androidwave.com/working-with-room-persistence-library/",
+      "guid": "https://androidwave.com/?p=1575",
+      "author": "admin",
+      "thumbnail": "https://androidwave.com/wp-content/uploads/2019/02/room-persistence-library-370x247.png",
+      "description": "What is Room Persistence Library? how is provide an abstraction layer over SQLite to allow for more robust database access? In this article, I’m going to explain how to deal with Room Persistence Library in Android."} ,
+    {
+      "title": "Implementation of RecyclerView with Cursor Adapter",
+      "pubDate": "2019-01-28 19:12:24",
+      "link": "https://androidwave.com/implementation-of-recyclerview-with-cursor-adapter/",
+      "guid": "https://androidwave.com/?p=1410",
+      "author": "admin",
+      "thumbnail": "https://androidwave.com/wp-content/uploads/2019/01/implementation-of-recyclerview-with-cursor-adapter-370x247.png",
+      "description": "In previous blog, I have explain best practises of implementing RecyclerView in Android. In this tutorials, I’m going to explain the implementation of LoaderManager with cursor adapter and render data over the RecyclerView."
+    },
+    {
+      "title": "MVP Architect Android apps with Dagger2, Retrofit &amp; RxJava",
+      "pubDate": "2019-01-27 14:58:38",
+      "link": "https://androidwave.com/mvp-architect-android-apps-with-dagger-2-retrofit-rxjava-2/",
+      "guid": "https://androidwave.com/?p=1356",
+      "author": "admin",
+      "thumbnail": "https://androidwave.com/wp-content/uploads/2019/01/mvp-architect-android-apps-with-dagger-2-retrofit-rxjava-2-370x247.png",
+      "description": "In this article, I’m gonna to explain the implementation of MVP architecture using Dagger 2, ButterKnife, Room Persistence, Rxjava 2, RxAndroid , Retrofit, logging and debugging. I will shared repository that contain all above library implementation following best practices."
+    },
+    {
+      "title": "Android RecyclerView Example Best Practices",
+      "pubDate": "2019-01-27 12:57:58",
+      "link": "https://androidwave.com/android-recyclerview-example-best-practices/",
+      "guid": "https://androidwave.com/?p=1400",
+      "author": "admin",
+      "thumbnail": "https://androidwave.com/wp-content/uploads/2019/01/android-recyclerview-example-best-practices-370x247.png",
+      "description": "In this tutorial, We are going to explain best practices to implement RecyclerView in Android. We will create a custom layout with CardView and render it on RecyclerView."
+    },
+    {
+      "title": "How to use ExoPlayer – Playing Audio Video",
+      "pubDate": "2019-01-24 19:31:45",
+      "link": "https://androidwave.com/how-to-use-exoplayer-playing-audio-video/",
+      "guid": "https://androidwave.com/?p=1300",
+      "author": "admin",
+      "thumbnail": "https://androidwave.com/wp-content/uploads/2019/01/how-to-use-exoplayer-playing-audio-video-370x247.jpeg",
+      "description": "In this tutorials, I’m going to explain how to use ExoPlayer. In this tutorial, we will demonstrate how to stream audio and video local URI and server as well."
+    },
+    {
+      "title": "Android Jetpack",
+      "pubDate": "2019-01-21 18:38:44",
+      "link": "https://androidwave.com/android-jetpack/",
+      "guid": "https://androidwave.com/?p=1065",
+      "author": "admin",
+      "thumbnail": "https://androidwave.com/wp-content/uploads/2019/01/android-jetpack-370x247.jpg",
+      "description": "What exactly is Android Jetpack? Android Jetpack is a collection of software components, tools and guidance to make great Android apps. It helps you to develop a good and high-quality app, accelerate your development, eliminate boilerplate code and deliver a robust app."
+    },
+    {
+      "title": "Retrofit Globally Error Handling",
+      "pubDate": "2019-01-20 19:31:37",
+      "link": "https://androidwave.com/retrofit-globally-error-handling/",
+      "guid": "https://androidwave.com/?p=1353",
+      "author": "admin",
+      "thumbnail": "https://androidwave.com/wp-content/uploads/2019/01/retrofit-globally-error-handling-370x247.jpeg",
+      "description": "In the majority of these tutorials, we will focus on handling all kind of error of integrating REST APIs."}
+  ]
+}

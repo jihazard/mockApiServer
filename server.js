@@ -1,7 +1,22 @@
 var jsonServer = require('json-server');
 var server = jsonServer.create();
 var middlewares = jsonServer.defaults();
-var bodyParser = require(`body-parser`) 
+var bodyParser = require(`body-parser`); 
+
+
+// const config = require("config");
+// const mongoose = require('mongoose');
+
+// const MongoClient = require('mongodb').MongoClient;
+// const uri = "mongodb+srv://psyche2823:aaaaaaaa@cluster0-yov3s.mongodb.net/test?retryWrites=true&w=majority";
+// const client = new MongoClient(uri, { useNewUrlParser: true });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   console.log("접속")
+//   client.close();
+// });
+
 
 server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({extended:true}))
@@ -12,11 +27,29 @@ server.use(middlewares);
 //json 파일이 저장될 경로
 var jsonSaveFolder = './db';
 var fs = require('fs');
-deleteJsonFile()
+
+server.get('/call/:router',function(req,res){
+  var router = req.params.router;
+  var filename = router + ".json";
+
+  getData(filename ,function(result){
+    if(result != undefined) {
+      let data = fs.readFileSync(jsonSaveFolder+ "/" + filename );
+      let jsondata = JSON.parse(data);
+      res.send(jsondata)
+    } else {
+      res.status(400).send("plz check url")
+    }
+  })
+})
+
 
  fs.readdir(jsonSaveFolder, function (error, filelist) {
   //console.log("error  == > " + error);
-  for(var i in filelist)  server.use("/" + filelist[i].replace(".json", ""), jsonServer.router('./db/' + filelist[i]));
+  for(var i in filelist) {
+    console.log("file list : " + filelist[i])
+    //server.use("/" + filelist[i].replace(".json", ""), jsonServer.router('./db/' + filelist[i]));
+  }
 
  
 
@@ -91,14 +124,23 @@ function createJsonFile(data){
 function deleteJsonFile(){
   // const file = fs.statSync('db3.json')
   // console.log(file.birthtime)
- 
 }
 
 function getList(callback) {
   return fs.readdir(jsonSaveFolder, function (error, filelist) {
        callback(null, filelist.map(obj=> obj.replace(".json","")));
-  })
-  
+  })  
 }
+
+
+
+function getData(filename, callbackFunc){
+  fs.readdir(jsonSaveFolder, function (error, filelist) {
+    callbackFunc(filelist.find(function(n){
+       return n == filename
+    })) 
+  })
+}
+
 
 
