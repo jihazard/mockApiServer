@@ -1,0 +1,23 @@
+{
+    "success": true,
+    "data": [
+        {
+            "_id": "5984f2a0d8afc1040c004ee9",
+            "id": 1,
+            "name": "My Hero 1",
+            "__v": 0
+        },
+        {
+            "_id": "5984f2c6d8afc1040c004eea",
+            "id": 2,
+            "name": "My Hero 2",
+            "__v": 0
+        },
+        {
+            "_id": "5984f2cdd8afc1040c004eec",
+            "id": 3,
+            "name": "Your Hero 1",
+            "__v": 0
+        }
+    ]
+}

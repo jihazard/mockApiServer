@@ -28,7 +28,7 @@ server.use(middlewares);
 var jsonSaveFolder = './db';
 var fs = require('fs');
 
-server.get('/call/:router',function(req,res){
+server.get('/api/v1/:router',function(req,res){
   var router = req.params.router;
   var filename = router + ".json";
 
@@ -52,7 +52,6 @@ server.get('/call/:router',function(req,res){
  
 
 })
-
 
 /* TODO
   1. 파일로 저장기능
